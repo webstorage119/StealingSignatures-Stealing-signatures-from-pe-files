@@ -70,7 +70,10 @@ int GetPositionOfPosition(int* size, std::string& path)
 		location += 8;
 
 	//clean up
+#if 0
+	//headers is not assigned in heap memory.
 	delete[] headers;
+#endif
 
 	//both values are DWORDS so add 4 bytes to skip location and get size
 	*size = location + 4;
